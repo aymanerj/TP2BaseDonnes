@@ -1,0 +1,46 @@
+﻿@model Tp2_BaseDonnes.Models.Equipe
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Equipe</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NomEquipe)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomEquipe)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pays)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pays)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CouleursEquipe)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CouleursEquipe)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DateFondation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateFondation)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="EquipeId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Tp2_BaseDonnes.Models.VueStatistiquesJoueur>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Joueur Id
+            </th>
+            <th>
+                Nom
+            </th>
+            <th>
+                Prenom
+            </th>
+            <th>
+                Nombre de buts
+            </th>
+            <th>
+               Nombre de matchs joues
+            </th>
+            <th>
+               Nom d'equipe
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JoueurId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prenom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreButs)
+            </td>
+             <td>
+                    @Html.DisplayFor(modelItem => item.NombreMatchsJoues)
+             </td>
+             <td>
+                    @Html.DisplayFor(modelItem => item.NomEquipe)
+             </td>
+            
+        </tr>
+}
+    </tbody>
+</table>
