@@ -16,11 +16,11 @@ namespace Tp2_BaseDonnes.Models
         public int? MinuteBut { get; set; }
         [Column("descriptionBut")]
         [StringLength(25)]
-        [Unicode(false)]
         public string? DescriptionBut { get; set; }
         [Column("JoueurID")]
         public int? JoueurId { get; set; }
         public int? MatchId { get; set; }
+        public byte[]? DescriptionMasquee { get; set; }
 
         [ForeignKey("JoueurId")]
         [InverseProperty("Buts")]

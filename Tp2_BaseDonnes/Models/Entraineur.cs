@@ -26,7 +26,6 @@ namespace Tp2_BaseDonnes.Models
         [Column(TypeName = "date")]
         public DateTime? DateNaissance { get; set; }
         [StringLength(15)]
-        [Unicode(false)]
         public string? Specialite { get; set; }
         [Column("age")]
         public int? Age { get; set; }

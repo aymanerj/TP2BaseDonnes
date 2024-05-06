@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Tp2_BaseDonnes.Data;
 using Tp2_BaseDonnes.Models;
@@ -22,9 +23,9 @@ namespace Tp2_BaseDonnes.Controllers
         // GET: Equipes
         public async Task<IActionResult> Index()
         {
-              return _context.Equipes != null ? 
-                          View(await _context.Equipes.ToListAsync()) :
-                          Problem("Entity set 'FootContext.Equipes'  is null.");
+            return _context.Equipes != null ?
+                        View(await _context.Equipes.ToListAsync()) :
+                        Problem("Entity set 'FootContext.Equipes'  is null.");
         }
 
         // GET: Equipes/Details/5
@@ -150,18 +151,46 @@ namespace Tp2_BaseDonnes.Controllers
             {
                 _context.Equipes.Remove(equipe);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool EquipeExists(int id)
         {
-          return (_context.Equipes?.Any(e => e.EquipeId == id)).GetValueOrDefault();
+            return (_context.Equipes?.Any(e => e.EquipeId == id)).GetValueOrDefault();
         }
         public async Task<IActionResult> IndexView()
         {
             return View(await _context.VueStatistiquesJoueurs.ToListAsync());
+        }
+
+        public async Task<IActionResult> IndexProcedure(int id)
+        {
+            But? But = await _context.Buts.FirstOrDefaultAsync(x => x.Courriel == courriel);
+            if (But != null)
+
+                // Récupérer les cartes bancaires
+                string query = "EXEC DecryptDescriptionBut @ButId";
+            List<SqlParameter> parameters = new List<SqlParameter>
+                    {
+                        new SqlParameter{ParameterName = "@ClientID", Value = client.ClientId}
+                    };
+
+            List<CarteBancaireEnClair> cartes = await _context.CarteBancaireEnClairs.FromSqlRaw(query, parameters.ToArray()).ToListAsync();
+
+            // Construire le ViewModel
+            ProfilClientViewModel vm = new ProfilClientViewModel()
+            {
+                Client = client,
+                Cartes = cartes
+            };
+
+            // Envoyez la vue
+            return View(vm);
+
+
+
         }
     }
 }

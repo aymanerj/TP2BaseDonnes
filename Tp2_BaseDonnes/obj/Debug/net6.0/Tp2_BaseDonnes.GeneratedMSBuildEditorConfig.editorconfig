@@ -9,45 +9,45 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Tp2_BaseDonnes
 build_property.RootNamespace = Tp2_BaseDonnes
-build_property.ProjectDir = C:\Users\2193774\Downloads\Tp2_BaseDonnes\
+build_property.ProjectDir = C:\Users\2193774\Desktop\TP2BaseDonnes\Tp2_BaseDonnes\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\2193774\Downloads\Tp2_BaseDonnes
+build_property.MSBuildProjectDirectory = C:\Users\2193774\Desktop\TP2BaseDonnes\Tp2_BaseDonnes
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/2193774/Downloads/Tp2_BaseDonnes/Views/Equipes/Create.cshtml]
+[C:/Users/2193774/Desktop/TP2BaseDonnes/Tp2_BaseDonnes/Views/Equipes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2193774/Downloads/Tp2_BaseDonnes/Views/Equipes/Delete.cshtml]
+[C:/Users/2193774/Desktop/TP2BaseDonnes/Tp2_BaseDonnes/Views/Equipes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2193774/Downloads/Tp2_BaseDonnes/Views/Equipes/Details.cshtml]
+[C:/Users/2193774/Desktop/TP2BaseDonnes/Tp2_BaseDonnes/Views/Equipes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2193774/Downloads/Tp2_BaseDonnes/Views/Equipes/Edit.cshtml]
+[C:/Users/2193774/Desktop/TP2BaseDonnes/Tp2_BaseDonnes/Views/Equipes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2193774/Downloads/Tp2_BaseDonnes/Views/Equipes/Index.cshtml]
+[C:/Users/2193774/Desktop/TP2BaseDonnes/Tp2_BaseDonnes/Views/Equipes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2193774/Downloads/Tp2_BaseDonnes/Views/Equipes/IndexView.cshtml]
+[C:/Users/2193774/Desktop/TP2BaseDonnes/Tp2_BaseDonnes/Views/Equipes/IndexView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlc1xJbmRleFZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2193774/Downloads/Tp2_BaseDonnes/Views/Shared/_Layout.cshtml]
+[C:/Users/2193774/Desktop/TP2BaseDonnes/Tp2_BaseDonnes/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2193774/Downloads/Tp2_BaseDonnes/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/2193774/Desktop/TP2BaseDonnes/Tp2_BaseDonnes/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2193774/Downloads/Tp2_BaseDonnes/Views/_ViewImports.cshtml]
+[C:/Users/2193774/Desktop/TP2BaseDonnes/Tp2_BaseDonnes/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

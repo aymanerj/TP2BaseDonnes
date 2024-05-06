@@ -23,7 +23,7 @@ create table Equipes.Equipe(
 EquipeId int identity(1,1),
 NomEquipe varchar(20),
 Pays varchar(20),
-CouleursEquipe varchar(15),
+CouleursEquipe nvarchar(15),
 DateFondation date,
 constraint PK_Equipe_EquipeId primary key (EquipeId)
 )
@@ -33,7 +33,7 @@ EntraineurId int identity(1,1),
 Nom varchar(20),
 Prenom varchar(20),
 DateNaissance Date,
-Specialite varchar(15),
+Specialite nvarchar(15),
 age int,
 constraint PK_Entraineur_EntraineurId primary key (EntraineurId)
 )
@@ -53,7 +53,7 @@ create table Matchs.But(
 ButId int identity(1,1),
 DateBut  Date,
 MinuteBut  int,
-descriptionBut  varchar(25),
+descriptionBut  nvarchar(25),
 JoueurID int,
 MatchId int,
 constraint PK_But_ButId primary key (ButId)

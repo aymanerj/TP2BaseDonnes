@@ -26,7 +26,6 @@ namespace Tp2_BaseDonnes.Models
         [Unicode(false)]
         public string? Pays { get; set; }
         [StringLength(15)]
-        [Unicode(false)]
         public string? CouleursEquipe { get; set; }
         [Column(TypeName = "date")]
         public DateTime? DateFondation { get; set; }
