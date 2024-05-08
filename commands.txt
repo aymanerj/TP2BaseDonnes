@@ -1,0 +1,2 @@
+evolve migrate sqlserver -c "Server=.\SQLEXPRESS;Initial Catalog=Foot;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=False" -s Equipes -s Matchs -s Contrats --target-version 1.5
+dotnet ef dbcontext scaffold Name=BdFoot Microsoft.EntityFrameworkCore.SqlServer -o Models --context-dir Data --data-annotations --force

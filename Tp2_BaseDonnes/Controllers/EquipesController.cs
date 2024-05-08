@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Tp2_BaseDonnes.Data;
 using Tp2_BaseDonnes.Models;
+using Tp2_BaseDonnes.ViewModels;
 
 namespace Tp2_BaseDonnes.Controllers
 {
@@ -19,7 +21,7 @@ namespace Tp2_BaseDonnes.Controllers
         {
             _context = context;
         }
-
+        
         // GET: Equipes
         public async Task<IActionResult> Index()
         {
@@ -27,6 +29,21 @@ namespace Tp2_BaseDonnes.Controllers
                         View(await _context.Equipes.ToListAsync()) :
                         Problem("Entity set 'FootContext.Equipes'  is null.");
         }
+        
+        //// GET: Equipes
+        //public async Task<IActionResult> Index()
+        //{
+        //    var viewModel = new DetailedButViewModel
+        //    {
+        //        StartDate = DateTime.Now,
+        //        EndDate = DateTime.Now,
+        //        EquipeId = 0,
+        //        DetailedButs = new List<DetailedBut>()
+        //    };
+
+        //    return View(viewModel);
+        //}
+       
 
         // GET: Equipes/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -160,37 +177,38 @@ namespace Tp2_BaseDonnes.Controllers
         {
             return (_context.Equipes?.Any(e => e.EquipeId == id)).GetValueOrDefault();
         }
+
         public async Task<IActionResult> IndexView()
         {
             return View(await _context.VueStatistiquesJoueurs.ToListAsync());
         }
 
+        [Authorize]
         public async Task<IActionResult> IndexProcedure(int id)
         {
-            But? But = await _context.Buts.FirstOrDefaultAsync(x => x.Courriel == courriel);
-            if (But != null)
-
-                // Récupérer les cartes bancaires
-                string query = "EXEC DecryptDescriptionBut @ButId";
+            // Récupérer le But par son ID
+            Equipe? equipe = await _context.Equipes.FirstOrDefaultAsync(x => x.EquipeId == id);
+            // Définir la requête et les paramètres
+            string query = "EXEC Equipes.DecryptCouleurEquipe @EquipeId";
             List<SqlParameter> parameters = new List<SqlParameter>
-                    {
-                        new SqlParameter{ParameterName = "@ClientID", Value = client.ClientId}
-                    };
-
-            List<CarteBancaireEnClair> cartes = await _context.CarteBancaireEnClairs.FromSqlRaw(query, parameters.ToArray()).ToListAsync();
-
-            // Construire le ViewModel
-            ProfilClientViewModel vm = new ProfilClientViewModel()
             {
-                Client = client,
-                Cartes = cartes
+                new SqlParameter { ParameterName = "@EquipeId", Value = id }
             };
 
-            // Envoyez la vue
+            // Exécuter la procédure stockée et récupérer les descriptions décryptées
+            List<CouleurDequipe> couleur = await _context.CouleurDequipes
+                .FromSqlRaw(query, parameters.ToArray())
+                .ToListAsync();
+
+            // Construire le ViewModel
+            DescriptionViewModel vm = new DescriptionViewModel()
+            {
+                equipe = equipe,
+                CouleurDequipe = couleur[0]
+            };
+
+            // Envoyer la vue
             return View(vm);
-
-
-
         }
     }
 }

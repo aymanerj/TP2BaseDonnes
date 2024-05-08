@@ -1,0 +1,31 @@
+﻿@model Tp2_BaseDonnes.ViewModels.DescriptionViewModel
+
+@{
+    ViewData["Title"] = "IndexProcedure";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="IndexView">View</a>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Couleur de l'équipe'
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.CouleurDequipe.CouleurEquipe)
+            </td>
+
+        </tr>
+    </tbody>
+</table>

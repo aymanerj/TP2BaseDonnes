@@ -25,10 +25,9 @@ namespace Tp2_BaseDonnes.Models
         [StringLength(20)]
         [Unicode(false)]
         public string? Pays { get; set; }
-        [StringLength(15)]
-        public string? CouleursEquipe { get; set; }
         [Column(TypeName = "date")]
         public DateTime? DateFondation { get; set; }
+        public byte[]? CouleurMasQue { get; set; }
 
         [InverseProperty("Equipe")]
         public virtual ICollection<ContratEntraineur> ContratEntraineurs { get; set; }

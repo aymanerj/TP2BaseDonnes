@@ -14,9 +14,6 @@ namespace Tp2_BaseDonnes.Models
         [Column(TypeName = "date")]
         public DateTime? DateBut { get; set; }
         public int? MinuteBut { get; set; }
-        [Column("descriptionBut")]
-        [StringLength(25)]
-        public string? DescriptionBut { get; set; }
         [Column("JoueurID")]
         public int? JoueurId { get; set; }
         public int? MatchId { get; set; }

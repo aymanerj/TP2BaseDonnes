@@ -21,7 +21,7 @@
                 @Html.DisplayNameFor(model => model.Pays)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CouleursEquipe)
+                @Html.DisplayNameFor(model => model.CouleurMasQue)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DateFondation)
@@ -39,7 +39,7 @@
                 @Html.DisplayFor(modelItem => item.Pays)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CouleursEquipe)
+                @Html.DisplayFor(modelItem => item.CouleurMasQue)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DateFondation)
@@ -47,7 +47,8 @@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.EquipeId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.EquipeId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.EquipeId">Delete</a>
+                <a asp-action="Delete" asp-route-id="@item.EquipeId">Delete</a>|
+                <a asp-action="IndexProcedure" asp-route-id="@item.EquipeId">Couleur dechiffrée</a>
             </td>
         </tr>
 }

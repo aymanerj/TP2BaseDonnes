@@ -1,37 +1,36 @@
-
+ALTER TABLE Equipes.Equipe
+ADD CouleurMasQue varbinary(MAX);
+go
 
 /*Ouvrir la clé */
-OPEN SYMMETRIC KEY MySymmetricKey
-DECRYPTION BY CERTIFICATE MyCert;
+OPEN SYMMETRIC KEY MySymmetricKey DECRYPTION BY CERTIFICATE MyCert;
 
 /*Encrypter les données existantes*/
-UPDATE Matchs.But
-SET DescriptionMasquee = EncryptByKey(Key_GUID('MySymmetricKey'), descriptionBut);
+UPDATE Equipes.Equipe SET CouleurMasQue = EncryptByKey(Key_GUID('MySymmetricKey'), CouleurEquipe);
 /* Fermer la clé:*/
 CLOSE SYMMETRIC KEY MySymmetricKey;
 /*Supprimer le champ original descriptionBut:*/
-ALTER TABLE Matchs.But
-DROP COLUMN descriptionBut;
+ALTER TABLE Equipes.Equipe
+DROP COLUMN CouleursEquipe;
 /*Créer une table pour les descriptions non cryptées*/
-CREATE TABLE Matchs.DescriptionBut (
-    ButId int,
-    DescriptionBut nvarchar(25)
+CREATE TABLE Equipes.CouleurDEquipe (
+    couleurEquipe nvarchar(25)
 );
 go
 
-/*Créer une procédure pour décrypter DescriptionMasquee*/
-CREATE PROCEDURE DecryptDescriptionBut
-@ButId int
+
+CREATE PROCEDURE DecryptCouleurEquipe
+@EquipeId int
 AS
 BEGIN
-    DECLARE @Description nvarchar(25);
+    
     OPEN SYMMETRIC KEY MySymmetricKey
     DECRYPTION BY CERTIFICATE MyCert;
 
-    SELECT @Description = CONVERT(nvarchar(25), DecryptByKey(DescriptionMasquee))
-    FROM Matchs.But
-    WHERE ButId = @ButId;
+    SELECT CONVERT(nvarchar(25), DecryptByKey(CouleurMasQue)) 
+    FROM Equipes.Equipe
+    WHERE EquipeId = @EquipeId;
 
     CLOSE SYMMETRIC KEY MySymmetricKey;
-    RETURN @Description;
 END;
+go
