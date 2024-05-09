@@ -21,7 +21,7 @@ namespace Tp2_BaseDonnes.Controllers
         {
             _context = context;
         }
-        
+
         // GET: Equipes
         public async Task<IActionResult> Index()
         {
@@ -29,7 +29,7 @@ namespace Tp2_BaseDonnes.Controllers
                         View(await _context.Equipes.ToListAsync()) :
                         Problem("Entity set 'FootContext.Equipes'  is null.");
         }
-        
+
         //// GET: Equipes
         //public async Task<IActionResult> Index()
         //{
@@ -43,7 +43,7 @@ namespace Tp2_BaseDonnes.Controllers
 
         //    return View(viewModel);
         //}
-       
+
 
         // GET: Equipes/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -60,6 +60,12 @@ namespace Tp2_BaseDonnes.Controllers
                 return NotFound();
             }
 
+            /*
+               var result = await _context.Equipes
+              .FromSqlRaw("EXEC GetButsByEquipe")
+              .ToListAsync();
+
+              */
             return View(equipe);
         }
 
@@ -183,7 +189,7 @@ namespace Tp2_BaseDonnes.Controllers
             return View(await _context.VueStatistiquesJoueurs.ToListAsync());
         }
 
-        
+
         public async Task<IActionResult> IndexProcedure(int id)
         {
             // Récupérer le But par son ID
@@ -210,6 +216,8 @@ namespace Tp2_BaseDonnes.Controllers
             // Envoyer la vue
             return View(vm);
         }
+
         
+
     }
 }

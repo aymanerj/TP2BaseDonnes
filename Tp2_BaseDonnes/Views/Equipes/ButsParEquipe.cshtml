@@ -1,0 +1,32 @@
+﻿@*@model IEnumerable<Tp2_BaseDonnes.Models.Equipe>
+
+@{
+    ViewData["Title"] = "Buts par Équipe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<h2>Buts par Équipe</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nom de l'Équipe</th>
+            <th>Nombre de Buts</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.NomEquipe</td>
+                <td>@item.NombreButs</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@

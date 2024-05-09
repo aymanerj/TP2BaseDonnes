@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\2193774\Downloads\TP2BaseDonnes\Tp2_BaseDonnes
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/2193774/Downloads/TP2BaseDonnes/Tp2_BaseDonnes/Views/Equipes/ButsParEquipe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlc1xCdXRzUGFyRXF1aXBlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/2193774/Downloads/TP2BaseDonnes/Tp2_BaseDonnes/Views/Equipes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
