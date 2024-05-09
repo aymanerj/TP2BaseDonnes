@@ -22,7 +22,6 @@ namespace Tp2_BaseDonnes.Data
         public virtual DbSet<ContratEntraineur> ContratEntraineurs { get; set; } = null!;
         public virtual DbSet<ContratJoueur> ContratJoueurs { get; set; } = null!;
         public virtual DbSet<CouleurDequipe> CouleurDequipes { get; set; } = null!;
-        public virtual DbSet<DescriptionBut> DescriptionButs { get; set; } = null!;
         public virtual DbSet<Entraineur> Entraineurs { get; set; } = null!;
         public virtual DbSet<Equipe> Equipes { get; set; } = null!;
         public virtual DbSet<GardienBut> GardienButs { get; set; } = null!;

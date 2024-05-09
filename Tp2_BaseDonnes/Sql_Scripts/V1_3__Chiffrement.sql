@@ -1,3 +1,5 @@
+
+
 ALTER TABLE Equipes.Equipe
 ADD CouleurMasQue varbinary(MAX);
 go
@@ -6,7 +8,7 @@ go
 OPEN SYMMETRIC KEY MySymmetricKey DECRYPTION BY CERTIFICATE MyCert;
 
 /*Encrypter les données existantes*/
-UPDATE Equipes.Equipe SET CouleurMasQue = EncryptByKey(Key_GUID('MySymmetricKey'), CouleurEquipe);
+UPDATE Equipes.Equipe SET CouleurMasQue = EncryptByKey(Key_GUID('MySymmetricKey'), CouleursEquipe);
 /* Fermer la clé:*/
 CLOSE SYMMETRIC KEY MySymmetricKey;
 /*Supprimer le champ original descriptionBut:*/
@@ -27,7 +29,7 @@ BEGIN
     OPEN SYMMETRIC KEY MySymmetricKey
     DECRYPTION BY CERTIFICATE MyCert;
 
-    SELECT CONVERT(nvarchar(25), DecryptByKey(CouleurMasQue)) 
+    SELECT CONVERT(nvarchar(25), DecryptByKey(CouleurMasQue)) as couleurEquipe
     FROM Equipes.Equipe
     WHERE EquipeId = @EquipeId;
 

@@ -183,13 +183,13 @@ namespace Tp2_BaseDonnes.Controllers
             return View(await _context.VueStatistiquesJoueurs.ToListAsync());
         }
 
-        [Authorize]
+        
         public async Task<IActionResult> IndexProcedure(int id)
         {
             // Récupérer le But par son ID
             Equipe? equipe = await _context.Equipes.FirstOrDefaultAsync(x => x.EquipeId == id);
             // Définir la requête et les paramètres
-            string query = "EXEC Equipes.DecryptCouleurEquipe @EquipeId";
+            string query = "EXEC dbo.DecryptCouleurEquipe @EquipeId";
             List<SqlParameter> parameters = new List<SqlParameter>
             {
                 new SqlParameter { ParameterName = "@EquipeId", Value = id }
@@ -210,5 +210,6 @@ namespace Tp2_BaseDonnes.Controllers
             // Envoyer la vue
             return View(vm);
         }
+        
     }
 }
