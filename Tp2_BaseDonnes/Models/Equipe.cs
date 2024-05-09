@@ -28,7 +28,7 @@ namespace Tp2_BaseDonnes.Models
         [Column(TypeName = "date")]
         public DateTime? DateFondation { get; set; }
         public byte[]? CouleurMasQue { get; set; }
-
+       
         [InverseProperty("Equipe")]
         public virtual ICollection<ContratEntraineur> ContratEntraineurs { get; set; }
         [InverseProperty("Equipe")]

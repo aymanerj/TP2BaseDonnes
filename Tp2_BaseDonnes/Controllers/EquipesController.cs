@@ -59,6 +59,7 @@ namespace Tp2_BaseDonnes.Controllers
             {
                 return NotFound();
             }
+         
             // Récupérer le But par son ID
             Equipe? equipe1 = await _context.Equipes.FirstOrDefaultAsync(x => x.EquipeId == id);
             // Définir la requête et les paramètres
@@ -101,14 +102,9 @@ namespace Tp2_BaseDonnes.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EquipeId,NomEquipe,Pays,CouleursEquipe,DateFondation")] Equipe equipe)
+        public async Task<IActionResult> Create([Bind("EquipeId,NomEquipe,Pays,CouleursEquipe,DateFondation")]Equipe equipe, DescriptionViewModel imageVM)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(equipe);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
+          
             return View(equipe);
         }
 
@@ -162,6 +158,28 @@ namespace Tp2_BaseDonnes.Controllers
             }
             return View(equipe);
         }
+       /* [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AjoutImageEquipe2( DescriptionViewModel imageVM)
+        {
+            if (ModelState.IsValid)
+            {
+                if (imageVM.FormFile != null && imageVM.FormFile.Length >= 0)
+                {
+                    MemoryStream stream = new MemoryStream();
+                    await imageVM.FormFile.CopyToAsync(stream);
+                    byte[] fichierImage = stream.ToArray();
+
+                    imageVM.image. = fichierImage;
+                }
+                _context.Add(imageVM.image);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(imageVM.image);
+         
+        }
+       */
 
         // GET: Equipes/Delete/5
         public async Task<IActionResult> Delete(int? id)
