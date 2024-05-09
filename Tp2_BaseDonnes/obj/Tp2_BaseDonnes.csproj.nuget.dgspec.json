@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\2193774\\Downloads\\TP2BaseDonnes\\Tp2_BaseDonnes\\Tp2_BaseDonnes.csproj": {}
+    "C:\\Users\\2193774\\Desktop\\TP2BaseDonnes\\Tp2_BaseDonnes\\Tp2_BaseDonnes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\2193774\\Downloads\\TP2BaseDonnes\\Tp2_BaseDonnes\\Tp2_BaseDonnes.csproj": {
+    "C:\\Users\\2193774\\Desktop\\TP2BaseDonnes\\Tp2_BaseDonnes\\Tp2_BaseDonnes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\2193774\\Downloads\\TP2BaseDonnes\\Tp2_BaseDonnes\\Tp2_BaseDonnes.csproj",
+        "projectUniqueName": "C:\\Users\\2193774\\Desktop\\TP2BaseDonnes\\Tp2_BaseDonnes\\Tp2_BaseDonnes.csproj",
         "projectName": "Tp2_BaseDonnes",
-        "projectPath": "C:\\Users\\2193774\\Downloads\\TP2BaseDonnes\\Tp2_BaseDonnes\\Tp2_BaseDonnes.csproj",
+        "projectPath": "C:\\Users\\2193774\\Desktop\\TP2BaseDonnes\\Tp2_BaseDonnes\\Tp2_BaseDonnes.csproj",
         "packagesPath": "C:\\Users\\2193774\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\2193774\\Downloads\\TP2BaseDonnes\\Tp2_BaseDonnes\\obj\\",
+        "outputPath": "C:\\Users\\2193774\\Desktop\\TP2BaseDonnes\\Tp2_BaseDonnes\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\2193774\\AppData\\Roaming\\NuGet\\NuGet.Config",

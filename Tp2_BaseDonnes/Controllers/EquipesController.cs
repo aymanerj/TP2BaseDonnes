@@ -59,6 +59,27 @@ namespace Tp2_BaseDonnes.Controllers
             {
                 return NotFound();
             }
+            // Récupérer le But par son ID
+            Equipe? equipe1 = await _context.Equipes.FirstOrDefaultAsync(x => x.EquipeId == id);
+            // Définir la requête et les paramètres
+            string query = "EXEC dbo.GetMatchsByEquipe @EquipeId";
+            List<SqlParameter> parameters = new List<SqlParameter>
+            {
+                new SqlParameter { ParameterName = "@EquipeId", Value = id }
+            };
+
+          
+
+            // Exécuter la procédure stockée et récupérer 
+                 List<Match1> Match1 = await _context.Match1s
+                .FromSqlRaw(query, parameters.ToArray())
+                .ToListAsync();
+            DescriptionViewModel vm = new DescriptionViewModel()
+            {
+                equipe = equipe,
+                Match1 = Match1
+
+            };
 
             /*
                var result = await _context.Equipes
@@ -66,7 +87,7 @@ namespace Tp2_BaseDonnes.Controllers
               .ToListAsync();
 
               */
-            return View(equipe);
+            return View(vm);
         }
 
         // GET: Equipes/Create
